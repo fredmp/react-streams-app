@@ -16,15 +16,15 @@ class StreamDelete extends React.Component {
 
   actions = () => (
     <React.Fragment>
-      <div
+      <button
         className="ui red button"
         onClick={() => this.onSubmit(this.props.stream)}
       >
         Delete
-      </div>
-      <div className="ui cancel button" onClick={this.onDismiss}>
+      </button>
+      <button className="ui cancel button" onClick={this.onDismiss}>
         Cancel
-      </div>
+      </button>
     </React.Fragment>
   );
 

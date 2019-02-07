@@ -1,5 +1,6 @@
 import React from "react";
 import { Field, reduxForm } from "redux-form";
+import history from "../../history";
 
 class StreamForm extends React.Component {
   renderInput = ({ input, label, meta }) => {
@@ -40,6 +41,9 @@ class StreamForm extends React.Component {
           label="Description"
         />
         <button className="ui button primary">Submit</button>
+        <button className="ui cancel button" onClick={() => history.push('/')}>
+            Cancel
+        </button>
       </form>
     );
   }
