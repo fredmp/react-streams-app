@@ -1,7 +1,8 @@
 import React from "react";
 import { connect } from 'react-redux';
-import { fetchStream, updateStream } from '../../actions';
 
+import { fetchStream, updateStream } from '../../actions';
+import history from "../../history";
 import StreamForm from './StreamForm';
 
 class StreamEdit extends React.Component {
@@ -14,6 +15,7 @@ class StreamEdit extends React.Component {
 
   onSubmit = formValues => {
     this.props.updateStream(formValues);
+    history.push("/");
   };
 
   render() {

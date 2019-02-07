@@ -1,6 +1,5 @@
 import _ from "lodash";
 import streams from '../apis/streams';
-import history from '../history';
 import {
   SIGN_IN,
   SIGN_OUT,
@@ -22,7 +21,6 @@ export const createStream = stream => async (dispatch, getState) => {
     type: CREATE_STREAM,
     payload: response.data
   });
-  history.push('/');
 };
 
 export const fetchStreams = () => async dispatch => {
@@ -47,7 +45,6 @@ export const updateStream = (stream) => async dispatch => {
     type: UPDATE_STREAM,
     payload: response.data
   });
-  history.push('/');
 };
 
 export const deleteStream = (stream) => async dispatch => {
