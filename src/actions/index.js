@@ -1,3 +1,4 @@
+import _ from "lodash";
 import streams from '../apis/streams';
 import history from '../history';
 import {
@@ -41,11 +42,12 @@ export const fetchStream = (id) => async dispatch => {
 };
 
 export const updateStream = (stream) => async dispatch => {
-  const response = await streams.put(`/streams/${stream.id}`, stream);
+  const response = await streams.patch(`/streams/${stream.id}`, _.pick(stream, 'title', 'description'));
   dispatch({
     type: UPDATE_STREAM,
     payload: response.data
   });
+  history.push('/');
 };
 
 export const deleteStream = (stream) => async dispatch => {
